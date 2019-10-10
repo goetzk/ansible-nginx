@@ -8,7 +8,6 @@ badges: |
   [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-nginx.svg)](https://github.com/weareinteractive/ansible-nginx)
   [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-nginx.svg)](https://github.com/weareinteractive/ansible-nginx)
 description: |
-  > * installs nginx
   > * configures nginx
   > * creates sites
   > * enables/disables sites

@@ -7,7 +7,6 @@
 
 > `franklinkim.nginx` is an [Ansible](http://www.ansible.com) role which:
 >
-> * installs nginx
 > * configures nginx
 > * creates sites
 > * enables/disables sites
@@ -38,6 +37,9 @@ $ git clone https://github.com/weareinteractive/ansible-nginx.git franklinkim.ng
 ## Dependencies
 
 * Ansible >= 2.0
+
+Nginx needs to be installed separately, try weareinteractive.apt (example below)
+
 ## Related (see example)
 
 * [franklinkim.openssl](https://github.com/weareinteractive/ansible-openssl)
@@ -71,10 +73,6 @@ Here is a list of all the default variables for this role, which are also availa
 #     append: ''
 #
 
-# apt repository
-nginx_repo: ppa:nginx/stable
-# package name (version)
-nginx_package: nginx
 # run as a less privileged user for security reasons.
 nginx_user: www-data
 # number or auto
@@ -147,6 +145,12 @@ This is an example playbook:
     - franklinkim.htpasswd
     - franklinkim.nginx
   vars:
+    apt_repositories:
+      - repo: 'ppa:nginx/stable'
+        state: present
+        update_cache: yes
+    apt_packages:
+      - nginx
     nginx_worker_processes: 1
     nginx_remove_default: yes
     htpasswd:

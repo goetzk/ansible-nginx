@@ -1,12 +1,5 @@
 ---
 
-- include: install.yml
-  tags:
-    - web
-    - nginx
-    - install
-    - nginx-install
-
 - include: config.yml
   tags:
     - web
